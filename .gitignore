@@ -4,12 +4,26 @@
 *.dll
 *.so
 *.dylib
-
-# Test binary, built with `go test -c`
-*.test
-
+public/.DS_Store
+.scannerwork
 # Output of the go coverage tool, specifically when used with LiteIDE
 *.out
-
+*.log
 # Dependency directories (remove the comment below to include it)
 # vendor/
+.env
+.env.production
+.idea/
+tests/tmp/
+.vscode
+main
+producao.zip
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
+.DS_Store
+.gebug/Dockerfile
+access.log
+contratos/*.pdf
+contratos/zips/*.zip
