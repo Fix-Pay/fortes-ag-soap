@@ -10,8 +10,9 @@ var _ time.Time
 var _ xml.Name
 
 type RequestGetListaClientes struct {
-	XMLName                  xml.Name `xml:"urn:getListaClientes"`
-	ConsiderarCancelados     bool     `xml:"xsd:boolean,xsi:type"`
+	XMLName              xml.Name `xml:"urn:getListaClientes"`
+	EncodingStyle        string   `xml:"http://schemas.xmlsoap.org/soap/encoding/ soap:encodingStyle"`
+	ConsiderarCancelados bool     `xml:"xsi:type ConsiderarCancelados"`
 }
 
 // `xml:"xsi:type,xsd:boolean ConsiderarCancelados,omitempty"`
