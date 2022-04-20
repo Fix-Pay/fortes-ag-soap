@@ -10,7 +10,7 @@ var _ time.Time
 var _ xml.Name
 
 type RequestGetListaClientes struct {
-	XMLName              xml.Name `xml:"urn:getListaClientes"`
+	XMLName   xml.Name `xml:"http://schemas.xmlsoap.org/soap/encoding/ soap:encodingStyle"`
 	EncodingStyle        string   `xml:"soap:encodingStyle,http://schemas.xmlsoap.org/soap/encoding/"`
 	ConsiderarCancelados bool     `xml:"xsi:type ConsiderarCancelados"`
 }
