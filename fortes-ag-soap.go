@@ -23,14 +23,14 @@ type UrnGetListaClientes struct {
 }
 
 type IAGExample interface {
-	GetListaClientesExample(request *RequestGetListaClientes) (*string, error)
+	GetListaClientesExample(request *UrnGetListaClientes) (*string, error)
 }
 
 type iAGExample struct {
 	client *soap.Client
 }
 
-func (i *iAGExample) GetListaClientesExample(request *RequestGetListaClientes) (*string, error) {
+func (i *iAGExample) GetListaClientesExample(request *UrnGetListaClientes) (*string, error) {
 	response := new(string)
 	err := i.client.Call("urn:AGIntf-IAG#getListaClientes", request, response)
 	if err != nil {
