@@ -10,9 +10,10 @@ var _ time.Time
 var _ xml.Name
 
 type RequestClientExample struct {
-	ConsiderarCancelados     bool   `xml:"ConsiderarCancelados,omitempty" json:"ConsiderarCancelados,omitempty"`
-	CPFCNPJ                  string `xml:"CPFCNPJ,omitempty" json:"CPFCNPJ,omitempty"`
-	DetalhaContatosEServicos bool   `xml:"DetalhaContatosEServicos,omitempty" json:"DetalhaContatosEServicos,omitempty"`
+	XMLName                  xml.Name `xml:"http://example.com/stockquote.xsd RequestClientExample"`
+	ConsiderarCancelados     bool     `xml:"ConsiderarCancelados,omitempty" json:"ConsiderarCancelados,omitempty"`
+	CPFCNPJ                  string   `xml:"CPFCNPJ,omitempty" json:"CPFCNPJ,omitempty"`
+	DetalhaContatosEServicos bool     `xml:"DetalhaContatosEServicos,omitempty" json:"DetalhaContatosEServicos,omitempty"`
 }
 
 type IAGExample interface {
