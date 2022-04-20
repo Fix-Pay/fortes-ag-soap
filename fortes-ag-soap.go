@@ -10,12 +10,17 @@ var _ time.Time
 var _ xml.Name
 
 type RequestGetListaClientes struct {
-	XMLName   xml.Name `xml:"http://schemas.xmlsoap.org/soap/encoding/ soap:encodingStyle"`
+	XMLName              xml.Name `xml:"http://schemas.xmlsoap.org/soap/encoding/ soap:encodingStyle"`
 	EncodingStyle        string   `xml:"soap:encodingStyle,http://schemas.xmlsoap.org/soap/encoding/"`
 	ConsiderarCancelados bool     `xml:"xsi:type ConsiderarCancelados"`
 }
 
-// `xml:"xsi:type,xsd:boolean ConsiderarCancelados,omitempty"`
+type UrnGetListaClientes struct {
+	XMLName       xml.Name `xml:"urn:getListaClientes"`
+	EncodingStyle string   `xml:"soap:encodingStyle,attr"`
+
+	ConsiderarCancelados bool `xml:"ConsiderarCancelados,omitempty"`
+}
 
 type IAGExample interface {
 	GetListaClientesExample(request *RequestGetListaClientes) (*string, error)
