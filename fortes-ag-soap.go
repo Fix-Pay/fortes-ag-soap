@@ -9,22 +9,22 @@ import (
 var _ time.Time
 var _ xml.Name
 
-type RequestClientExample struct {
-	XMLName                  xml.Name `xml:"http://example.com/stockquote.xsd RequestClientExample"`
-	ConsiderarCancelados     bool     `xml:"ConsiderarCancelados,omitempty" json:"ConsiderarCancelados,omitempty"`
-	CPFCNPJ                  string   `xml:"CPFCNPJ,omitempty" json:"CPFCNPJ,omitempty"`
-	DetalhaContatosEServicos bool     `xml:"DetalhaContatosEServicos,omitempty" json:"DetalhaContatosEServicos,omitempty"`
+type RequestGetListaClientes struct {
+	XMLName                  xml.Name `xml:"urn:getListaClientes"`
+	ConsiderarCancelados     bool     `xml:"xsd:boolean,xsi:type"`
 }
 
+// `xml:"xsi:type,xsd:boolean ConsiderarCancelados,omitempty"`
+
 type IAGExample interface {
-	GetListaClientesExample(request *RequestClientExample) (*string, error)
+	GetListaClientesExample(request *RequestGetListaClientes) (*string, error)
 }
 
 type iAGExample struct {
 	client *soap.Client
 }
 
-func (i *iAGExample) GetListaClientesExample(request *RequestClientExample) (*string, error) {
+func (i *iAGExample) GetListaClientesExample(request *RequestGetListaClientes) (*string, error) {
 	response := new(string)
 	err := i.client.Call("urn:AGIntf-IAG#getListaClientes", request, response)
 	if err != nil {
