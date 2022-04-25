@@ -22,6 +22,8 @@ github.com/Fix-Pay/gowsdl v1.0.10 h1:6Em09XCAH14nNOJBl5Dzg2OVF9NzaM+tkTL8Fd/iaZA
 github.com/Fix-Pay/gowsdl v1.0.10/go.mod h1:T60SjnJxU9r6hrw0aCdwRfebGlqtL5Za0C5WphPVHNA=
 github.com/Fix-Pay/gowsdl v1.0.11 h1:MjyXFUKsNfKEKjhDgftNIHjFvpNyUTpbzpvXQRB7HNA=
 github.com/Fix-Pay/gowsdl v1.0.11/go.mod h1:T60SjnJxU9r6hrw0aCdwRfebGlqtL5Za0C5WphPVHNA=
+github.com/Fix-Pay/gowsdl v1.0.12 h1:QwD7VmBnWvag/GdG9fFjdyMp2hfV+gY8owAuP/dVXDk=
+github.com/Fix-Pay/gowsdl v1.0.12/go.mod h1:T60SjnJxU9r6hrw0aCdwRfebGlqtL5Za0C5WphPVHNA=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
 github.com/stretchr/objx v0.1.0/go.mod h1:HFkY916IF+rwdDfMAkV7OtwuqBVzrE8GR6GFx+wExME=
