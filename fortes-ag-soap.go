@@ -30,20 +30,15 @@ type UrnGetListaClientesResponse struct {
 }
 
 type IAGExample interface {
-	GetListaClientesExample(request *UrnGetListaClientes) (*string, error)
+	GetListaClientesExample(request *UrnGetListaClientes, response *UrnGetListaClientesResponse) error
 }
 
 type iAGExample struct {
 	client *soap.Client
 }
 
-func (i *iAGExample) GetListaClientesExample(request *UrnGetListaClientes) (*string, error) {
-	response := new(string)
-	err := i.client.Call("urn:AGIntf-IAG#getListaClientes", request, response)
-	if err != nil {
-		return nil, err
-	}
-	return response, nil
+func (i *iAGExample) GetListaClientesExample(request *UrnGetListaClientes, response *UrnGetListaClientesResponse) error {
+	return i.client.Call("urn:AGIntf-IAG#getListaClientes", request, response)
 }
 
 func NewIAGExample(client *soap.Client) IAGExample {
