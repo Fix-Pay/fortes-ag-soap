@@ -22,6 +22,13 @@ type UrnGetListaClientes struct {
 	ConsiderarCancelados bool `xml:"ConsiderarCancelados,omitempty"`
 }
 
+type UrnGetListaClientesResponse struct {
+	XMLName  xml.Name `xml:"ns1:getListaClientesResponse"`
+	XmlnsNs1 string   `xml:"xmlns:ns1,attr"`
+
+	Return string `xml:"return"`
+}
+
 type IAGExample interface {
 	GetListaClientesExample(request *UrnGetListaClientes) (*string, error)
 }
