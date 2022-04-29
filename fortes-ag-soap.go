@@ -37,7 +37,7 @@ type GetListaClientesResponse struct {
 	Return  string   `xml:"return"`
 }
 
-type Client struct {
+type ClienteFortes struct {
 	Codigo         string `json:"codigo"`
 	Cnpj           string `json:"cnpj"`
 	RazaoSocial    string `json:"razao social"`
@@ -54,25 +54,25 @@ type Client struct {
 	Email          string `json:"email"`
 }
 
-type IAGExample interface {
+type IAG interface {
 	GetListaClientesExample(request *GetListaClientesRequest, response *EnvelopeResponse) error
 	Call(soapAction string, request *interface{}, response *interface{}) error
 }
 
-type iAGExample struct {
+type iAG struct {
 	client *soap.Client
 }
 
-func (i *iAGExample) GetListaClientesExample(request *GetListaClientesRequest, response *EnvelopeResponse) error {
+func (i *iAG) GetListaClientesExample(request *GetListaClientesRequest, response *EnvelopeResponse) error {
 	return i.client.Call("urn:AGIntf-IAG#getListaClientes", request, response)
 }
 
-func (i *iAGExample) Call(soapAction string, request *interface{}, response *interface{}) error {
+func (i *iAG) Call(soapAction string, request *interface{}, response *interface{}) error {
 	return i.client.Call(soapAction, request, response)
 }
 
-func NewIAGExample(client *soap.Client) IAGExample {
-	return &iAGExample{
+func NewIAG(client *soap.Client) IAG {
+	return &iAG{
 		client: client,
 	}
 }
