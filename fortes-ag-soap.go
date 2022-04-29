@@ -15,29 +15,37 @@ type RequestGetListaClientes struct {
 	ConsiderarCancelados bool     `xml:"xsi:type ConsiderarCancelados"`
 }
 
-type UrnGetListaClientes struct {
+type GetListaClientesRequest struct {
 	XMLName       xml.Name `xml:"urn:getListaClientes"`
 	EncodingStyle string   `xml:"soap:encodingStyle,attr"`
 
 	ConsiderarCancelados bool `xml:"ConsiderarCancelados,omitempty"`
 }
 
-type UrnGetListaClientesResponse struct {
-	XMLName  xml.Name `xml:"ns1:getListaClientesResponse"`
-	XmlnsNs1 string   `xml:"xmlns:ns1,attr"`
+type EnvelopeResponse struct {
+	XMLName xml.Name `xml:"Envelope"`
+	Body    Body
+}
 
-	Return string `xml:"return"`
+type Body struct {
+	XMLName                  xml.Name `xml:"Body"`
+	GetListaClientesResponse GetListaClientesResponse
+}
+
+type GetListaClientesResponse struct {
+	XMLName xml.Name `xml:"getListaClientesResponse"`
+	Return  string   `xml:"return"`
 }
 
 type IAGExample interface {
-	GetListaClientesExample(request *UrnGetListaClientes, response *UrnGetListaClientesResponse) error
+	GetListaClientesExample(request *GetListaClientesRequest, response *EnvelopeResponse) error
 }
 
 type iAGExample struct {
 	client *soap.Client
 }
 
-func (i *iAGExample) GetListaClientesExample(request *UrnGetListaClientes, response *UrnGetListaClientesResponse) error {
+func (i *iAGExample) GetListaClientesExample(request *GetListaClientesRequest, response *EnvelopeResponse) error {
 	return i.client.Call("urn:AGIntf-IAG#getListaClientes", request, response)
 }
 
