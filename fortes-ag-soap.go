@@ -66,7 +66,7 @@ func (i *iAGExample) GetListaClientesExample(request *GetListaClientesRequest, r
 	return i.client.Call("urn:AGIntf-IAG#getListaClientes", request, response)
 }
 
-func (i *iAGExample) Call(soapAction string, request *interface{}, response *interface{}) error {
+func (i *iAGExample) CallAction(soapAction string, request *interface{}, response *interface{}) error {
 	return i.client.Call(soapAction, request, response)
 }
 
