@@ -55,7 +55,7 @@ type ClienteFortes struct {
 }
 
 type IAG interface {
-	GetListaClientesExample(request *GetListaClientesRequest, response *EnvelopeResponse) error
+	GetListaClientes(request *GetListaClientesRequest, response *EnvelopeResponse) error
 	Call(soapAction string, request , response interface{}) error
 }
 
@@ -63,7 +63,7 @@ type iAG struct {
 	client *soap.Client
 }
 
-func (i *iAG) GetListaClientesExample(request *GetListaClientesRequest, response *EnvelopeResponse) error {
+func (i *iAG) GetListaClientes(request *GetListaClientesRequest, response *EnvelopeResponse) error {
 	return i.client.Call("urn:AGIntf-IAG#getListaClientes", request, response)
 }
 
