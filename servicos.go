@@ -14,12 +14,12 @@ type RequestGetListaServicos struct {
 }
 
 type GetListaServicosRequest struct {
-	XMLName       xml.Name `xml:"urn:getListaServicos"`
+	XMLName       xml.Name `xml:"urn:getListaServicosFull"`
 	EncodingStyle string   `xml:"soap:encodingStyle,attr"`
 }
 
 type GetListaServicosResponse struct {
-	XMLName xml.Name `xml:"getListaServicosResponse"`
+	XMLName xml.Name `xml:"getListaServicosFullResponse"`
 	Return  string   `xml:"return"`
 }
 
