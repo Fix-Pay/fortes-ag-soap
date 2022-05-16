@@ -14,12 +14,12 @@ type RequestGetListaServicos struct {
 }
 
 type GetListaServicosRequest struct {
-	XMLName       xml.Name `xml:"urn:getListaServicosFull"`
+	XMLName       xml.Name `xml:"urn:GetListaServicosFull"`
 	EncodingStyle string   `xml:"soap:encodingStyle,attr"`
 }
 
 type GetListaServicosResponse struct {
-	XMLName xml.Name `xml:"getListaServicosFullResponse"`
+	XMLName xml.Name `xml:"GetListaServicosFullResponse"`
 	Return  string   `xml:"return"`
 }
 
@@ -42,5 +42,5 @@ type ServicoFortes struct {
 }
 
 func (i *iAG) GetListaServicos(request *GetListaServicosRequest, response *EnvelopeResponse) error {
-	return i.client.Call("urn:AGIntf-IAG#getListaServicosFull", request, response)
+	return i.client.Call("urn:AGIntf-IAG#GetListaServicosFull", request, response)
 }
