@@ -24,26 +24,30 @@ type GetListaServicosResponse struct {
 }
 
 type ServicoFortes struct {
-	XMLName  xml.Name  `xml:"AG"`
-	Servicos []Servico `xml:"Servicos"`
+	XMLName  xml.Name `xml:"AG"`
+	Servicos Servicos `xml:"Servicos"`
+}
+
+type Servicos struct {
+	XMLName xml.Name  `xml:"Servicos"`
+	Servico []Servico `xml:"Servico"`
 }
 
 type Servico struct {
-	XMLName        xml.Name `xml:"Servico"`
-	Codigo         string   `xml:"Codigo"`
-	Nome           string   `xml:"Nome"`
-	NomeApresentar string   `xml:"NomeApresentar"`
-	Valor          string   `xml:"Valor"`
-	ISS            string   `xml:"ISS"`
-	INSS           string   `xml:"INSS"`
-	IRRF           string   `xml:"IRRF"`
-	PISCOFINSCSLL  string   `xml:"PISCOFINSCSLL"`
-	AliqISS        string   `xml:"AliqISS"`
-	AliqINSS       string   `xml:"AliqINSS"`
-	AliqIRRF       string   `xml:"AliqIRRF"`
-	AliqPIS        string   `xml:"AliqPIS"`
-	AliqCOFINS     string   `xml:"AliqCOFINS"`
-	AliqCSL        string   `xml:"AliqCSL"`
+	Codigo         string `xml:"Codigo"`
+	Nome           string `xml:"Nome"`
+	NomeApresentar string `xml:"NomeApresentar"`
+	Valor          string `xml:"Valor"`
+	ISS            string `xml:"ISS"`
+	INSS           string `xml:"INSS"`
+	IRRF           string `xml:"IRRF"`
+	PISCOFINSCSLL  string `xml:"PISCOFINSCSLL"`
+	AliqISS        string `xml:"AliqISS"`
+	AliqINSS       string `xml:"AliqINSS"`
+	AliqIRRF       string `xml:"AliqIRRF"`
+	AliqPIS        string `xml:"AliqPIS"`
+	AliqCOFINS     string `xml:"AliqCOFINS"`
+	AliqCSL        string `xml:"AliqCSL"`
 }
 
 func (i *iAG) GetListaServicos(request *GetListaServicosRequest, response *EnvelopeResponse) error {
