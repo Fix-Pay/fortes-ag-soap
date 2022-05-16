@@ -14,38 +14,33 @@ type RequestGetListaServicos struct {
 }
 
 type GetListaServicosRequest struct {
-	XMLName       xml.Name `xml:"urn:GetListaServicosFull"`
+	XMLName       xml.Name `xml:"urn:GetListaServicosXML"`
 	EncodingStyle string   `xml:"soap:encodingStyle,attr"`
 }
 
 type GetListaServicosResponse struct {
-	XMLName xml.Name               `xml:"GetListaServicosFullResponse"`
-	Return  []GetListaServicosItem `xml:"return"`
-}
-
-type GetListaServicosItem struct {
-	XMLName xml.Name `xml:"item"`
-	Body    string
+	XMLName xml.Name `xml:"GetListaServicosXMLResponse"`
+	Return  string   `xml:"return"`
 }
 
 type ServicoFortes struct {
-	Codigo         string  `json:"codigo"`
-	Nome           string  `json:"nome"`
-	NomeApresentar string  `json:"nome_apresentar"`
-	Valor          string  `json:"valor"`
-	Iss            string  `json:"iss"`
-	Inss           string  `json:"inss"`
-	Irrf           string  `json:"irrf"`
-	PisCofinsCsll  string  `json:"pis_cofins_csll"`
-	AliqISS        string  `json:"aliq_iss"`
-	AliqINSS       float64 `json:"aliq_inss"`
-	AliqIRRF       float64 `json:"aliq_irrf"`
-	NomeMunicipio  float64 `json:"nomemunicipio"`
-	AliqPIS        float64 `json:"aliq_pis"`
-	AliqCOFINS     float64 `json:"aliq_cofins"`
-	AliqCSL        float64 `json:"aliq_csl"`
+	Codigo         string  `xml:"codigo"`
+	Nome           string  `xml:"nome"`
+	NomeApresentar string  `xml:"nome_apresentar"`
+	Valor          string  `xml:"valor"`
+	Iss            string  `xml:"iss"`
+	Inss           string  `xml:"inss"`
+	Irrf           string  `xml:"irrf"`
+	PisCofinsCsll  string  `xml:"pis_cofins_csll"`
+	AliqISS        string  `xml:"aliq_iss"`
+	AliqINSS       float64 `xml:"aliq_inss"`
+	AliqIRRF       float64 `xml:"aliq_irrf"`
+	NomeMunicipio  float64 `xml:"nomemunicipio"`
+	AliqPIS        float64 `xml:"aliq_pis"`
+	AliqCOFINS     float64 `xml:"aliq_cofins"`
+	AliqCSL        float64 `xml:"aliq_csl"`
 }
 
 func (i *iAG) GetListaServicos(request *GetListaServicosRequest, response *EnvelopeResponse) error {
-	return i.client.Call("urn:AGIntf-IAG#GetListaServicosFull", request, response)
+	return i.client.Call("urn:AGIntf-IAG#GetListaServicosXML", request, response)
 }
