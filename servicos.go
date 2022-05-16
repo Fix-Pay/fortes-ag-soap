@@ -19,12 +19,31 @@ type GetListaServicosRequest struct {
 }
 
 type GetListaServicosResponse struct {
-	XMLName xml.Name `xml:"GetListaServicosFullResponse"`
-	Return  string   `xml:"return"`
+	XMLName xml.Name               `xml:"GetListaServicosFullResponse"`
+	Return  []GetListaServicosItem `xml:"return"`
+}
+
+type GetListaServicosItem struct {
+	XMLName xml.Name `xml:"item"`
+	Body    string
 }
 
 type ServicoFortes struct {
-	Item []string `xml:"item"`
+	Codigo         string  `json:"codigo"`
+	Nome           string  `json:"nome"`
+	NomeApresentar string  `json:"nome_apresentar"`
+	Valor          string  `json:"valor"`
+	Iss            string  `json:"iss"`
+	Inss           string  `json:"inss"`
+	Irrf           string  `json:"irrf"`
+	PisCofinsCsll  string  `json:"pis_cofins_csll"`
+	AliqISS        string  `json:"aliq_iss"`
+	AliqINSS       float64 `json:"aliq_inss"`
+	AliqIRRF       float64 `json:"aliq_irrf"`
+	NomeMunicipio  float64 `json:"nomemunicipio"`
+	AliqPIS        float64 `json:"aliq_pis"`
+	AliqCOFINS     float64 `json:"aliq_cofins"`
+	AliqCSL        float64 `json:"aliq_csl"`
 }
 
 func (i *iAG) GetListaServicos(request *GetListaServicosRequest, response *EnvelopeResponse) error {
