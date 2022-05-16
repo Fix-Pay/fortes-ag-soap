@@ -22,7 +22,7 @@ type GetListaServicosResponse struct {
 	XMLName xml.Name `xml:"GetListaServicosXMLResponse"`
 	Return  string   `xml:"return"`
 }
-<AG><Servicos><Servico>
+
 type ServicoFortes struct {
 	AG struct {
 		Servicos []struct {
