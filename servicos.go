@@ -22,23 +22,29 @@ type GetListaServicosResponse struct {
 	XMLName xml.Name `xml:"GetListaServicosXMLResponse"`
 	Return  string   `xml:"return"`
 }
-
+<AG><Servicos><Servico>
 type ServicoFortes struct {
-	Codigo         string  `xml:"codigo"`
-	Nome           string  `xml:"nome"`
-	NomeApresentar string  `xml:"nome_apresentar"`
-	Valor          string  `xml:"valor"`
-	Iss            string  `xml:"iss"`
-	Inss           string  `xml:"inss"`
-	Irrf           string  `xml:"irrf"`
-	PisCofinsCsll  string  `xml:"pis_cofins_csll"`
-	AliqISS        string  `xml:"aliq_iss"`
-	AliqINSS       float64 `xml:"aliq_inss"`
-	AliqIRRF       float64 `xml:"aliq_irrf"`
-	NomeMunicipio  float64 `xml:"nomemunicipio"`
-	AliqPIS        float64 `xml:"aliq_pis"`
-	AliqCOFINS     float64 `xml:"aliq_cofins"`
-	AliqCSL        float64 `xml:"aliq_csl"`
+	AG struct {
+		Servicos []struct {
+			Servico struct {
+				Codigo         string  `xml:"Codigo"`
+				Nome           string  `xml:"Nome"`
+				NomeApresentar string  `xml:"NomeApresentar"`
+				Valor          string  `xml:"Valor"`
+				Iss            string  `xml:"Iss"`
+				Inss           string  `xml:"Inss"`
+				Irrf           string  `xml:"Irrf"`
+				PisCofinsCsll  string  `xml:"PisCofinsCsll"`
+				AliqISS        string  `xml:"AliqISS"`
+				AliqINSS       float64 `xml:"AliqINSS"`
+				AliqIRRF       float64 `xml:"AliqIRRF"`
+				NomeMunicipio  float64 `xml:"NomeMunicipio"`
+				AliqPIS        float64 `xml:"AliqPIS"`
+				AliqCOFINS     float64 `xml:"AliqCOFINS"`
+				AliqCSL        float64 `xml:"AliqCSL"`
+			} `xml:"Servico"`
+		} `xml:"Servicos"`
+	} `xml:"AG"`
 }
 
 func (i *iAG) GetListaServicos(request *GetListaServicosRequest, response *EnvelopeResponse) error {
