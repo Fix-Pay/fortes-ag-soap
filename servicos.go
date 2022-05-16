@@ -42,5 +42,5 @@ type ServicoFortes struct {
 }
 
 func (i *iAG) GetListaServicos(request *GetListaServicosRequest, response *EnvelopeResponse) error {
-	return i.client.Call("urn:AGIntf-IAG#getListaServicos", request, response)
+	return i.client.Call("urn:AGIntf-IAG#getListaServicosFull", request, response)
 }
