@@ -31,14 +31,13 @@ type ServicoFortes struct {
 				Nome           string `xml:"Nome"`
 				NomeApresentar string `xml:"NomeApresentar"`
 				Valor          string `xml:"Valor"`
-				Iss            string `xml:"Iss"`
-				Inss           string `xml:"Inss"`
-				Irrf           string `xml:"Irrf"`
-				PisCofinsCsll  string `xml:"PisCofinsCsll"`
+				ISS            string `xml:"ISS"`
+				INSS           string `xml:"INSS"`
+				IRRF           string `xml:"IRRF"`
+				PISCOFINSCSLL  string `xml:"PISCOFINSCSLL"`
 				AliqISS        string `xml:"AliqISS"`
 				AliqINSS       string `xml:"AliqINSS"`
 				AliqIRRF       string `xml:"AliqIRRF"`
-				NomeMunicipio  string `xml:"NomeMunicipio"`
 				AliqPIS        string `xml:"AliqPIS"`
 				AliqCOFINS     string `xml:"AliqCOFINS"`
 				AliqCSL        string `xml:"AliqCSL"`
