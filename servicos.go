@@ -24,13 +24,8 @@ type GetListaServicosResponse struct {
 }
 
 type ServicoFortes struct {
-	XMLName  xml.Name   `xml:"AG"`
-	Servicos []Servicos `xml:"Servicos"`
-}
-
-type Servicos struct {
-	XMLName xml.Name `xml:"Servicos"`
-	Servico Servico  `xml:"Servico"`
+	XMLName  xml.Name  `xml:"AG"`
+	Servicos []Servico `xml:"Servicos"`
 }
 
 type Servico struct {
