@@ -9,16 +9,18 @@ var _ time.Time
 var _ xml.Name
 
 type RequestGetListaClientes struct {
-	XMLName              xml.Name `xml:"http://schemas.xmlsoap.org/soap/encoding/ soap:encodingStyle"`
-	EncodingStyle        string   `xml:"soap:encodingStyle,http://schemas.xmlsoap.org/soap/encoding/"`
-	ConsiderarCancelados bool     `xml:"xsi:type ConsiderarCancelados"`
+	XMLName                  xml.Name `xml:"http://schemas.xmlsoap.org/soap/encoding/ soap:encodingStyle"`
+	EncodingStyle            string   `xml:"soap:encodingStyle,http://schemas.xmlsoap.org/soap/encoding/"`
+	ConsiderarCancelados     bool     `xml:"xsi:type ConsiderarCancelados"`
+	DetalhaContatosEServicos bool     `xml:"xsi:type DetalhaContatosEServicos"`
 }
 
 type GetListaClientesRequest struct {
 	XMLName       xml.Name `xml:"urn:getListaClientes"`
 	EncodingStyle string   `xml:"soap:encodingStyle,attr"`
 
-	ConsiderarCancelados bool `xml:"ConsiderarCancelados,omitempty"`
+	ConsiderarCancelados     bool `xml:"ConsiderarCancelados,omitempty"`
+	DetalhaContatosEServicos bool `xml:"DetalhaContatosEServicos,omitempty"`
 }
 
 type GetListaClientesResponse struct {
