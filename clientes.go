@@ -41,6 +41,18 @@ type ClienteFortes struct {
 	NomeMunicipio  string `json:"nomemunicipio"`
 	Telefone       string `json:"telefone"`
 	Email          string `json:"email"`
+	Servicos       []struct {
+		CodServico       string `json:"CODSERVICO"`
+		NomeServico      string `json:"NOMESERVICO"`
+		CodModalidade    string `json:"CODMODALIDADE"`
+		NomeModalidade   string `json:"NOMEMODALIDADE"`
+		Aquisicao        string `json:"AQUISICAO"`
+		DataAquisicao    string `json:"DATAAQUISICAO"`
+		DtCancel         string `json:"DTCANCEL"`
+		DataCancelamento string `json:"DATACANCELAMENTO"`
+		DtSuspendFim     string `json:"DTSUSPENDFIM"`
+		DataSuspencao    string `json:"DATASUSPENCAO"`
+	} `json:"Servicos"`
 }
 
 func (i *iAG) GetListaClientes(request *GetListaClientesRequest, response *EnvelopeResponse) error {
